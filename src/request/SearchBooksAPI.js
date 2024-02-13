@@ -24,7 +24,7 @@ function SearchBooksAPI () {
       const response = await axios.get('https://www.googleapis.com/books/v1/volumes', {
         params: {
           q: query,
-          key: 'AIzaSyAilzZlPDvNx_Y4h6jt3CfBUxByAGS_gDE'
+          key: process.env.API_BASE_KEY
         },
       });
       setBooks(response.data.items);

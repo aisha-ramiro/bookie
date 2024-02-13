@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default async function fetchContentApi (uri) {
  
-  const endpoint = `https://www.googleapis.com/books/v1/volumes/RJxWIQOvoZUC`
+  const endpoint = `https://www.googleapis.com/books/v1/volumes/`
 
   try {
     const response = await axios.get(endpoint)
