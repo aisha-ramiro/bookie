@@ -1,0 +1,32 @@
+.navbar {
+  width: 100%;
+  background-color: #8CBEB2;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 5em;
+  padding: .7em 5em;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.logo {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu{
+  display: flex;
+  gap: 2em;
+  font-size: 14px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #573544;
+}
+
+.menu a:hover{
+  color: #fff;
+  transition: 0.3s;
+}

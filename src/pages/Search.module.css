@@ -1,0 +1,82 @@
+.Search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.searchIntro{
+  width: 50%;
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 2em;
+}
+
+.searchIntro h3 {
+  font-size: 32px;
+  margin-bottom: .6em;
+  font-weight: 500;
+}
+
+.form {
+  border: 1px solid rgba(0, 0, 0, 0.237);
+  padding: 3em;
+  border-radius: 20px;
+}
+
+.form form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+
+}
+
+.form form input, select {
+  border: none;
+  width: 100%;
+  height: 30px;
+  margin-bottom:1em;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: .5em;
+}
+
+.form form input[type="submit"]  {
+  background-color: #8CBEB2;
+  width: 25%;
+  color: #fff;
+  margin-top: 1em;
+}
+
+.form form input[type="submit"]:hover {
+  background-color: #573544;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.cards{
+  align-items: center;
+  justify-content: center;
+  width: 70%!important;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .55em;
+}
+
+.Result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+  font-size: 28px;
+  gap: 2em;
+}
+
+.Result div{
+  text-align: center;
+  width: 50%;
+}

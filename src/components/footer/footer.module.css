@@ -1,0 +1,74 @@
+.footer {
+  width: 100%;
+  color: #fff;
+  background-color: #8CBEB2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50em;
+  padding: 2em 5em;
+  border-bottom: 1px solid #00000041;
+}
+
+.about h3 {
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.about div ol {
+  list-style: none;
+}
+
+.about div ol p {
+  font-weight: 600;
+  margin-bottom: .5em;
+}
+
+.about div ol li {
+  margin-bottom: .2em;
+}
+
+.about div ol li:hover {
+  color: #5c4b51;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.copy{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6em 5em;
+}
+
+.copyRight span {
+  font-weight: bold;
+  color: #5c4b51
+}
+
+.social{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+
+}
+
+.social svg{
+  width: 25px;
+  height: 25px;
+}
+
+.social svg:hover{
+  color: #5c4b51;
+  transition: .3s;
+  cursor: pointer;
+}
