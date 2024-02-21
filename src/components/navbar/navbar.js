@@ -9,7 +9,7 @@ import styles from './navbar.module.css'
       </div>
       <div className={styles.menu}>
         <a href="/">Página inicial</a>
-        <a href="/search">Nova recomendação</a>
+        {/*<a href="/search">Nova recomendação</a>*/}
       </div>
     </div>
   )

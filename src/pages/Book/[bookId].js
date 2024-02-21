@@ -51,7 +51,11 @@ function Book({ match }) {
     <div className={styles.Book}>
       <div className={styles.container}>
         <div className={styles.cover}>
-          <img src={book.volumeInfo.imageLinks.medium} alt="cover" />
+          {book.volumeInfo.imageLinks ? (
+            <img src={book.volumeInfo.imageLinks.medium} alt="cover" />
+          ) : (
+            <></>
+          )} 
         </div>
         <div className={styles.infoBook}>
           <div className={styles.info}>

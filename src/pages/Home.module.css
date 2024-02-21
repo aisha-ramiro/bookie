@@ -22,7 +22,7 @@
   font-weight: 600;
 }
 
-.intro button{
+.intro a{
   margin-top: 2.5em;
   background-color: #8CBEB2;
   border: none;
@@ -33,9 +33,12 @@
   font-family: 'Montserrat';
   font-weight: 500;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.intro button:hover{
+.intro a:hover{
   background-color: #573544;
   transition: .4s;
   cursor: pointer;

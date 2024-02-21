@@ -5,7 +5,7 @@ function Home () {
     <div className={styles.Home}>
       <div className={styles.intro}>
         <p>Encontre o <span>livro</span> perfeito para cada <span>momento</span></p>
-        <button>Começar agora</button>
+        <a href="/search">Começar agora</a>
 
       </div>
       <div className={styles.img}>
