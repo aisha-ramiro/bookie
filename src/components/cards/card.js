@@ -14,13 +14,7 @@ function Card (props) {
        )}
       </div>
       <div className={styles.content}>
-          <p>{props.dado.volumeInfo.title}</p> 
-          -
-          {props.dado.volumeInfo.authors && props.dado.volumeInfo.authors.length > 0 ? (
-        <p>{props.dado.volumeInfo.authors[0]}</p>
-      ) : (
-        <p>Desconhecido</p>
-      )}
+          <p className={styles.title} >{props.dado.volumeInfo.title}</p> 
       </div>
     </div>
     </Link>

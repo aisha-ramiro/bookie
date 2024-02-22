@@ -21,7 +21,8 @@ function Search() {
     const handleSubmit = async (event) => {
       event.preventDefault();
       try {
-        const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
+        const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=18
+        `);
         setBooks(response.data.items);
       } catch (error) {
         console.error('Error fetching data: ', error);

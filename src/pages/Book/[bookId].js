@@ -46,23 +46,23 @@ function Book({ match }) {
 
   console.log('data', book)
 
+  
 
   return (
     <div className={styles.Book}>
       <div className={styles.container}>
         <div className={styles.cover}>
           {book.volumeInfo.imageLinks ? (
-            <img src={book.volumeInfo.imageLinks.medium} alt="cover" />
+            <img src={book.volumeInfo.imageLinks.thumbnail} alt="cover" />
           ) : (
             <></>
           )} 
         </div>
         <div className={styles.infoBook}>
           <div className={styles.info}>
-            <div>
-              <h2>{book.volumeInfo.title}</h2> - <h3>{book.volumeInfo.authors[0]}</h3>
-            </div>
-            <p>{book.volumeInfo.description}</p>
+              <h2>{book.volumeInfo.title}</h2> 
+              <h3>{book.volumeInfo.authors[0]}</h3>
+
           </div>
           <div className={styles.details}>
             <table>
@@ -104,7 +104,11 @@ function Book({ match }) {
             </table>
           </div>
         </div>
+        
       </div>
+      <div  className={styles.description}>
+      <div dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }} />
+            </div>
     </div>
   )
 }
