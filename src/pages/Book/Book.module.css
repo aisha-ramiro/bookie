@@ -5,6 +5,7 @@
   min-height: 100vh; /* Isso garante que a altura da tela seja coberta */
   flex-direction: column;
   margin: 4em 0;
+
 }
 
 .container {
@@ -16,6 +17,11 @@
   max-width: 1200px;
   margin: 1em 0 2em 0;
   width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 2em;
+  background-color: #ffffff96;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cover img {
@@ -65,8 +71,59 @@
   padding: 0 0 0.4em 0.3em;
  
 }
+
+.details table tr {
+  border-bottom: 1px solid rgb(180, 179, 179);
+  padding: 0.2em 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+}
+
 .description {
-  max-width: 1100px;
+  max-width: 1200px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 2em;
+  background-color: #ffffff96;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.buttons a {
+  margin-top: 2.5em;
+  background-color: #8CBEB2;
+  border: none;
+  width: 33%;
+  height: 40px;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons a:hover{
+  background-color: #573544;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 28px; /* Define o tamanho das estrelas */
+  color: rgba(238, 169, 40, 0.795); /* Define a cor das estrelas */
 }
 
 @media screen and (max-width: 768px) {

@@ -46,6 +46,18 @@ function Book({ match }) {
 
   console.log('data', book)
 
+  const renderStarRating = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(<span key={i} className={styles.star}>&#9733;</span>); // Estrela preenchida
+      } else {
+        stars.push(<span key={i} className={styles.star}>&#9734;</span>); // Estrela vazia
+      }
+    }
+    return stars;
+  };
+
   
 
   return (
@@ -62,8 +74,13 @@ function Book({ match }) {
           <div className={styles.info}>
               <h2>{book.volumeInfo.title}</h2> 
               <h3>{book.volumeInfo.authors[0]}</h3>
-
+              {book.volumeInfo.averageRating && (
+            <p>
+              {renderStarRating(book.volumeInfo.averageRating)}
+            </p>
+          )}
           </div>
+          
           <div className={styles.details}>
             <table>
               <caption>Detalhes</caption>
@@ -73,13 +90,10 @@ function Book({ match }) {
               </tr>
               <tr>
                 {book.volumeInfo.categories && (
-                  <div>
+                <>
                     <th>Gêneros: </th>
-                    <div>
                       <td>{book.volumeInfo.categories[0]}</td>
-
-                    </div>
-                  </div>
+                      </>
                 )}
               </tr>
               <tr>
@@ -92,16 +106,29 @@ function Book({ match }) {
               </tr>
               <tr>
                 {book.volumeInfo.industryIdentifiers && (
-                  <div>
+                  <>
                     <th>Código: </th>
-                    <div>
+                   
                       <td>{book.volumeInfo.industryIdentifiers[0].identifier}</td>
                       <td>{book.volumeInfo.industryIdentifiers[0].type}</td>
-                    </div>
-                  </div>
+                      </> 
+                
                 )}
               </tr>
             </table>
+          </div>
+          
+          <div className={styles.buttons}>
+          {book.volumeInfo.previewLink && (
+            <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
+              Download
+            </a>
+          )}
+          {book.saleInfo && book.saleInfo.buyLink && (
+            <a href={book.saleInfo.buyLink} target="_blank" rel="noopener noreferrer">
+              Comprar
+            </a>
+          )}
           </div>
         </div>
         
