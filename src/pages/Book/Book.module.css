@@ -1,8 +1,8 @@
 .Book {
   display: flex;
   justify-content: center;
-  align-items: center; /* Centraliza verticalmente */
-  min-height: 100vh; /* Isso garante que a altura da tela seja coberta */
+  align-items: center;
+  min-height: 100vh;
   flex-direction: column;
   margin: 4em 0;
 
@@ -31,13 +31,13 @@
 
 .cover {
   flex: 1;
-  max-width: 50%; /* Define a largura máxima como metade da largura da tela */
+  max-width: 50%;
   margin-right: 20px;
 }
 
 .infoBook {
   flex: 1;
-  width: 100%; /* Define a largura máxima como metade da tela */
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -51,7 +51,7 @@
 
 .details {
   display: flex;
-  justify-content: flex-start; /* Centraliza horizontalmente */
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
 
@@ -64,12 +64,11 @@
 }
 
 .details table caption {
-  text-align: start; /* Centraliza o texto do título da tabela */
+  text-align: start;
   margin-bottom: 0.5em;
   font-weight: bold;
   border-bottom: 1px solid rgb(180, 179, 179);
   padding: 0 0 0.4em 0.3em;
- 
 }
 
 .details table tr {
@@ -78,7 +77,6 @@
   display: flex;
   flex-direction: row;
   gap: 1em;
-
 }
 
 .description {
@@ -115,27 +113,74 @@
   align-items: center;
 }
 
-.buttons a:hover{
+.buttonsBack {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buttonsBack button {
+  background-color: #fff;
+  border: 1px solid #8CBEB2;
+  width: 15%;
+  height: 30px;
+  border-radius: 10px;
+  color: #8CBEB2;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.buttonsBack button a {
+  color: #8CBEB2;
+}
+
+.buttons a:hover {
   background-color: #573544;
   transition: .4s;
   cursor: pointer;
 }
 
+.buttonsBack button:hover {
+  background-color: #8CBEB2;
+  color: #fff;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.buttonsBack button a:hover {
+  color: #fff;
+}
+
 .star {
-  font-size: 28px; /* Define o tamanho das estrelas */
-  color: rgba(238, 169, 40, 0.795); /* Define a cor das estrelas */
+  font-size: 28px;
+  color: rgba(238, 169, 40, 0.795);
 }
 
 @media screen and (max-width: 768px) {
-  
+
   .container {
     flex-direction: column;
-    align-items: center; /* Centraliza os itens na tela */
+    align-items: center;
   }
 
-  .cover, .infoBook {
-    max-width: 100%; /* Define a largura máxima para ocupar 100% da largura da tela */
-    margin-right: 0; /* Remove a margem */
+  .buttonsBack {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .cover,
+  .infoBook {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
 }

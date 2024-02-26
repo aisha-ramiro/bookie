@@ -1,4 +1,3 @@
-import cover from '../../assets/gogol.jpg'
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -7,10 +6,8 @@ import axios from 'axios'
 import styles from './Book.module.css'
 
 
-function Book({ match }) {
+function Book() {
   const { id } = useParams();
-
-
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -28,21 +25,8 @@ function Book({ match }) {
         setLoading(false);
       }
     };
-
     fetchBookDetails();
   }, [id]);
-
-  if (loading) {
-    return <p>Carregando...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
-
-  if (!book) {
-    return <p>Livro não encontrado.</p>;
-  }
 
   console.log('data', book)
 
@@ -50,37 +34,50 @@ function Book({ match }) {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        stars.push(<span key={i} className={styles.star}>&#9733;</span>); // Estrela preenchida
+        stars.push(<span key={i} className={styles.star}>&#9733;</span>); 
       } else {
-        stars.push(<span key={i} className={styles.star}>&#9734;</span>); // Estrela vazia
+        stars.push(<span key={i} className={styles.star}>&#9734;</span>);
       }
     }
     return stars;
   };
 
-  
+  const handleClearLocalStorage = () => {
+    localStorage.clear();
+  };
 
   return (
     <div className={styles.Book}>
+      <div className={styles.buttonsBack}>
+        <button >
+          <a href="/search">
+            Voltar para resultados
+          </a>
+        </button>
+        <button onClick={handleClearLocalStorage}>
+          <a href="/search">
+            Nova busca
+          </a>
+        </button>
+      </div>
       <div className={styles.container}>
         <div className={styles.cover}>
           {book.volumeInfo.imageLinks ? (
             <img src={book.volumeInfo.imageLinks.thumbnail} alt="cover" />
           ) : (
             <></>
-          )} 
+          )}
         </div>
         <div className={styles.infoBook}>
           <div className={styles.info}>
-              <h2>{book.volumeInfo.title}</h2> 
-              <h3>{book.volumeInfo.authors[0]}</h3>
-              {book.volumeInfo.averageRating && (
-            <p>
-              {renderStarRating(book.volumeInfo.averageRating)}
-            </p>
-          )}
+            <h2>{book.volumeInfo.title}</h2>
+            <h3>{book.volumeInfo.authors[0]}</h3>
+            {book.volumeInfo.averageRating && (
+              <p>
+                {renderStarRating(book.volumeInfo.averageRating)}
+              </p>
+            )}
           </div>
-          
           <div className={styles.details}>
             <table>
               <caption>Detalhes</caption>
@@ -90,10 +87,10 @@ function Book({ match }) {
               </tr>
               <tr>
                 {book.volumeInfo.categories && (
-                <>
+                  <>
                     <th>Gêneros: </th>
-                      <td>{book.volumeInfo.categories[0]}</td>
-                      </>
+                    <td>{book.volumeInfo.categories[0]}</td>
+                  </>
                 )}
               </tr>
               <tr>
@@ -108,34 +105,30 @@ function Book({ match }) {
                 {book.volumeInfo.industryIdentifiers && (
                   <>
                     <th>Código: </th>
-                   
-                      <td>{book.volumeInfo.industryIdentifiers[0].identifier}</td>
-                      <td>{book.volumeInfo.industryIdentifiers[0].type}</td>
-                      </> 
-                
+                    <td>{book.volumeInfo.industryIdentifiers[0].identifier}</td>
+                    <td>{book.volumeInfo.industryIdentifiers[0].type}</td>
+                  </>
                 )}
               </tr>
             </table>
           </div>
-          
           <div className={styles.buttons}>
-          {book.volumeInfo.previewLink && (
-            <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-              Download
-            </a>
-          )}
-          {book.saleInfo && book.saleInfo.buyLink && (
-            <a href={book.saleInfo.buyLink} target="_blank" rel="noopener noreferrer">
-              Comprar
-            </a>
-          )}
+            {book.volumeInfo.previewLink && (
+              <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
+                Download
+              </a>
+            )}
+            {book.saleInfo && book.saleInfo.buyLink && (
+              <a href={book.saleInfo.buyLink} target="_blank" rel="noopener noreferrer">
+                Comprar
+              </a>
+            )}
           </div>
         </div>
-        
       </div>
-      <div  className={styles.description}>
-      <div dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }} />
-            </div>
+      <div className={styles.description}>
+        <div dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }} />
+      </div>
     </div>
   )
 }

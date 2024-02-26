@@ -22,7 +22,7 @@
   font-weight: 600;
 }
 
-.intro a{
+.intro button{
   margin-top: 2.5em;
   background-color: #8CBEB2;
   border: none;
@@ -38,7 +38,11 @@
   align-items: center;
 }
 
-.intro a:hover{
+.intro button a{
+  color: #fff;
+}
+
+.intro button:hover{
   background-color: #573544;
   transition: .4s;
   cursor: pointer;
