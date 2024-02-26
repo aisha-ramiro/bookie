@@ -47,7 +47,14 @@ function Book() {
   };
 
   return (
+
     <div className={styles.Book}>
+     {loading ? (
+      <div>Loading...</div>
+    ) : error ? (
+      <div>Error: {error}</div>
+    ) : (
+      <>
       <div className={styles.buttonsBack}>
         <button >
           <a href="/search">
@@ -129,6 +136,8 @@ function Book() {
       <div className={styles.description}>
         <div dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }} />
       </div>
+      </>
+       )}
     </div>
   )
 }
