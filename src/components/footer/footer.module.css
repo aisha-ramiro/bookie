@@ -4,15 +4,20 @@
   background-color: #8CBEB2;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
 }
 
 .about {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 2em 1em; /* Reduzi o padding horizontal */
-  border-bottom: 1px solid #fff; /* Alterei a cor da borda */
-  text-align: center; /* Centraliza o conteúdo */
+  justify-content: space-between;
+  padding: 2em 5em; 
+  border-bottom: 1px solid #fff; 
+  text-align: center; 
 }
 
 .about h3 {
@@ -43,9 +48,11 @@
 
 .copy {
   display: flex;
-  flex-direction: column; /* Alterei para empilhar os elementos verticalmente */
-  align-items: center; /* Centraliza os elementos */
-  padding: .6em 1em; /* Reduzi o padding horizontal */
+  flex-wrap: wrap;
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: .6em 10em; 
 }
 
 .copyRight span {
@@ -57,8 +64,8 @@
   display: flex;
   gap: 1em;
   align-items: center;
-  justify-content: center; /* Centraliza os elementos */
-  margin-top: 0.5em; /* Adicionei um espaçamento superior */
+  justify-content: center; 
+  margin-top: 0.5em;
 }
 
 .social svg{
@@ -74,10 +81,10 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 2em 0.5em; /* Reduz o padding horizontal */
+    padding: 2em 4em;
   }
   
   .copy {
-    padding: .6em 0.5em; /* Reduz o padding horizontal */
+    padding: .6em 2.5em;
   }
 }

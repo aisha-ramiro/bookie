@@ -68,7 +68,7 @@ select {
   display: grid;
   grid-template-columns: repeat(6, 1fr);  
   gap: 1em;
-  margin: 0 auto; 
+  margin: 2em auto; 
  
 }
 
@@ -109,12 +109,15 @@ select {
 
 @media only screen and (max-width: 600px) {
   .form {
-    padding: 1em; /* Reduzi um pouco o padding */
+    padding: 1em; 
   }
 
   .cards {
     grid-template-columns: repeat(2, 1fr);  
-    gap: 0.5em; /* Reduzi o espaçamento entre os cartões */
-   
+    gap: 0.5em;
+  }
+
+  .Search button {
+    width: 100%;
   }
 }
