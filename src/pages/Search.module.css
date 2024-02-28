@@ -4,40 +4,42 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90vh;
+  min-height: 100vh;
+  padding: 1em; 
 }
 
 .searchIntro {
   width: 100%;
   text-align: center;
-  font-size: 22px;
+  font-size: 1.5rem;
   margin-bottom: 2em;
 }
 
 .searchIntro h3 {
-  font-size: 32px;
+  font-size: 2rem;
   margin-bottom: .6em;
   font-weight: 500;
 }
 
 .form {
   border: 1px solid rgba(0, 0, 0, 0.237);
-  padding: 3em;
+  padding: 2em;
   border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
 .form form {
   display: flex;
   flex-direction: column;
-  width: 500px;
-
 }
 
 .form form input,
 select {
   border: none;
   width: 100%;
-  height: 30px;
+  height: 40px; 
   margin-bottom: 1em;
   border-radius: 10px;
   background-color: #fff;
@@ -46,9 +48,10 @@ select {
 
 .form form input[type="submit"] {
   background-color: #8CBEB2;
-  width: 25%;
+  width: 100%;
   color: #fff;
   margin-top: 1em;
+  height: 45px
 }
 
 .form form input[type="submit"]:hover {
@@ -60,10 +63,13 @@ select {
 .cards {
   align-items: center;
   justify-content: center;
-  width: 70% !important;
+  max-width: 1200px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: .55em;
+  grid-template-columns: repeat(6, 1fr);  
+  gap: 1em;
+  margin: 0 auto; 
+ 
 }
 
 .Result {
@@ -72,7 +78,6 @@ select {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90vh;
   font-size: 28px;
   gap: 2em;
 }
@@ -100,4 +105,16 @@ select {
   background-color: #573544;
   transition: .4s;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .form {
+    padding: 1em; /* Reduzi um pouco o padding */
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);  
+    gap: 0.5em; /* Reduzi o espaçamento entre os cartões */
+   
+  }
 }

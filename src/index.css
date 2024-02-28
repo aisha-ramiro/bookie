@@ -2,13 +2,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 html,
-body,
-#root {
-  
+body {
   font-family: 'Montserrat';
   background-color: #efefef;
-  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .elemento {
+    width: 100%;
+  }
+
 }

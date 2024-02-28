@@ -3,9 +3,9 @@
   background-color: #8CBEB2;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  justify-content: space-between;
   gap: 5em;
-  padding: .7em 5em;
+  padding: .7em 1em;
   font-family: 'Comfortaa', sans-serif;
 }
 
@@ -29,4 +29,19 @@
 .menu a:hover{
   color: #fff;
   transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; 
+    padding: .7em 0.5em; 
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu a {
+    margin: 0;
+  }
 }

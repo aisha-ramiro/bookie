@@ -4,26 +4,26 @@
   background-color: #8CBEB2;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .about {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 50em;
-  padding: 2em 5em;
-  border-bottom: 1px solid #00000041;
+  padding: 2em 1em; /* Reduzi o padding horizontal */
+  border-bottom: 1px solid #fff; /* Alterei a cor da borda */
+  text-align: center; /* Centraliza o conteúdo */
 }
 
 .about h3 {
-  font-size: 40px;
+  font-size: 1.5rem; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-family: 'Comfortaa', sans-serif;
 }
 
 .about div ol {
   list-style: none;
+  padding: 0;
 }
 
 .about div ol p {
@@ -41,12 +41,11 @@
   cursor: pointer;
 }
 
-.copy{
+.copy {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: .6em 5em;
+  flex-direction: column; /* Alterei para empilhar os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos */
+  padding: .6em 1em; /* Reduzi o padding horizontal */
 }
 
 .copyRight span {
@@ -54,12 +53,12 @@
   color: #5c4b51
 }
 
-.social{
+.social {
   display: flex;
-  flex-direction: row;
   gap: 1em;
   align-items: center;
-
+  justify-content: center; /* Centraliza os elementos */
+  margin-top: 0.5em; /* Adicionei um espaçamento superior */
 }
 
 .social svg{
@@ -71,4 +70,14 @@
   color: #5c4b51;
   transition: .3s;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 2em 0.5em; /* Reduz o padding horizontal */
+  }
+  
+  .copy {
+    padding: .6em 0.5em; /* Reduz o padding horizontal */
+  }
 }
